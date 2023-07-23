@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://kd8widlsyt5p"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_seic2"]
+[ext_resource type="Material" uid="uid://bbwll33m6r8hv" path="res://hit_mat.tres" id="2_7u0d8"]
+[ext_resource type="Material" uid="uid://d4f52rhkjol00" path="res://Assets/Materials/Player/base_color.tres" id="3_3f7ff"]
+[ext_resource type="Material" uid="uid://dj82y0ckbdopt" path="res://Assets/Materials/Player/knuckles.tres" id="4_0d6i6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cyi85"]
+material = ExtResource("3_3f7ff")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mbpj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3gf1f"]
+bottom_radius = 0.369
+height = 2.272
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yl55w"]
+top_radius = 0.525
+bottom_radius = 0.232
+height = 1.743
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_enij5"]
+material = ExtResource("3_3f7ff")
+radius = 0.105
+height = 0.95
+
+[sub_resource type="BoxMesh" id="BoxMesh_u8c5l"]
+material = ExtResource("4_0d6i6")
+size = Vector3(0.183, 0.131, 0.084)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a03et"]
+material = ExtResource("4_0d6i6")
+size = Vector3(0.125, 0.129, 0.064)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1u2a4"]
+material = ExtResource("4_0d6i6")
+size = Vector3(0.125, 0.052, 0.097)
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01083, 0)
+script = ExtResource("1_seic2")
+hit_material = ExtResource("2_7u0d8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_cyi85")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3mbpj")
+
+[node name="LeftArm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565085, 0)
+visible = false
+
+[node name="LeftShoulder" type="Node3D" parent="LeftArm"]
+
+[node name="UpperArm" type="MeshInstance3D" parent="LeftArm/LeftShoulder"]
+transform = Transform3D(0.303454, 0.277143, 0.0389076, 0.0980408, -0.357377, 0.252286, 0.150285, -0.326464, -0.243145, 0.846471, -0.569196, -0.045948)
+mesh = SubResource("CylinderMesh_3gf1f")
+skeleton = NodePath("../../..")
+
+[node name="LeftElbow" type="Node3D" parent="LeftArm"]
+
+[node name="Forearm" type="MeshInstance3D" parent="LeftArm/LeftElbow"]
+transform = Transform3D(0.352536, 0, 0, 0, -0.494409, -0.163192, 0, 0.258196, -0.31249, 1.15573, -0.622375, -1.00399)
+mesh = SubResource("CylinderMesh_yl55w")
+skeleton = NodePath("../../..")
+
+[node name="LeftArm2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565085, 0)
+visible = false
+
+[node name="LeftShoulder" type="Node3D" parent="LeftArm2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06054, 0, 0)
+
+[node name="UpperArm" type="MeshInstance3D" parent="LeftArm2/LeftShoulder"]
+transform = Transform3D(0.343878, 0.122851, 3.72529e-09, -0.0584045, 0.409235, -0.232309, -0.0511671, 0.358524, 0.265168, 1.21299, -0.663487, -0.252336)
+mesh = SubResource("CylinderMesh_3gf1f")
+skeleton = NodePath("../../..")
+
+[node name="LeftElbow" type="Node3D" parent="LeftArm2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06054, 0, 0)
+
+[node name="Forearm" type="MeshInstance3D" parent="LeftArm2/LeftElbow"]
+transform = Transform3D(0.340577, -0.119692, 0.0506561, -0.047563, -0.498526, -0.150786, 0.077633, 0.219661, -0.314609, 1.06123, -0.591849, -1.14707)
+mesh = SubResource("CylinderMesh_yl55w")
+skeleton = NodePath("../../..")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565085, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Head"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(2.10062, 0, 0, 0, 0.154504, 2.09493, 0, -2.09493, 0.154504, 0.873993, -0.609606, -0.619903)
+mesh = SubResource("CapsuleMesh_enij5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(3.36887, 0, 0, 0, 0.247786, 3.35975, 0, -3.35975, 0.247786, 0.87369, -0.370354, -1.55271)
+mesh = SubResource("BoxMesh_u8c5l")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(-0.0445086, -0.993587, -3.21871, -1.1202e-09, 3.21899, -0.993674, 3.36858, -0.0131282, -0.0425285, 0.532462, -0.598141, -1.45829)
+mesh = SubResource("BoxMesh_a03et")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(-0.0445086, -3.17016, 1.13902, -2.24041e-09, -1.13912, -3.17044, 3.36858, -0.041887, 0.0150497, 1.21733, -0.45676, -1.44924)
+mesh = SubResource("BoxMesh_1u2a4")

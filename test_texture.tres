@@ -1,0 +1,6 @@
+[gd_resource type="MeshTexture" load_steps=2 format=3 uid="uid://ca0ey2nxxpf7i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8dne1"]
+
+[resource]
+mesh = SubResource("PlaneMesh_8dne1")

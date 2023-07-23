@@ -1,0 +1,276 @@
+[gd_scene load_steps=30 format=3 uid="uid://dlac5dy0vyn6b"]
+
+[ext_resource type="Environment" uid="uid://b3njaauobd82r" path="res://MainEnvironment.tres" id="1_2jdk5"]
+[ext_resource type="Texture2D" uid="uid://ca0ey2nxxpf7i" path="res://test_texture.tres" id="3_xfu80"]
+[ext_resource type="PackedScene" uid="uid://kd8widlsyt5p" path="res://player.tscn" id="3_ykggw"]
+[ext_resource type="Script" path="res://hittable_object.gd" id="4_ebrxo"]
+[ext_resource type="PackedScene" uid="uid://u80hvhfmppp0" path="res://Assets/Modular Temple/Terrain_Water_Large.obj" id="6_i72mb"]
+
+[sub_resource type="Gradient" id="Gradient_vbgbq"]
+offsets = PackedFloat32Array(0, 0.777778, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.518519, 0.518519, 0.518519, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rh3u5"]
+gradient = SubResource("Gradient_vbgbq")
+fill_to = Vector2(0.474747, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_bpbn3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjlnx"]
+albedo_color = Color(1, 0.741176, 0.501961, 1)
+albedo_texture = ExtResource("3_xfu80")
+clearcoat_enabled = true
+clearcoat_roughness = 0.46
+clearcoat_texture = SubResource("GradientTexture2D_rh3u5")
+detail_mask = SubResource("ImageTexture_bpbn3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_von4v"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_cqnyp"]
+mesh = SubResource("PlaneMesh_von4v")
+
+[sub_resource type="Gradient" id="Gradient_0wd0i"]
+offsets = PackedFloat32Array(0, 0.777778, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.518519, 0.518519, 0.518519, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tft4j"]
+gradient = SubResource("Gradient_0wd0i")
+fill_to = Vector2(0.474747, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_rps0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mea10"]
+albedo_color = Color(1, 0.741176, 0.501961, 1)
+albedo_texture = SubResource("MeshTexture_cqnyp")
+clearcoat_enabled = true
+clearcoat_roughness = 0.46
+clearcoat_texture = SubResource("GradientTexture2D_tft4j")
+detail_mask = SubResource("ImageTexture_rps0h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j1dyy"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_t72l5"]
+mesh = SubResource("PlaneMesh_j1dyy")
+
+[sub_resource type="Gradient" id="Gradient_bau7m"]
+offsets = PackedFloat32Array(0, 0.777778, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.518519, 0.518519, 0.518519, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ipamc"]
+gradient = SubResource("Gradient_bau7m")
+fill_to = Vector2(0.474747, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_ajynf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow0be"]
+albedo_color = Color(1, 0.741176, 0.501961, 1)
+albedo_texture = SubResource("MeshTexture_t72l5")
+clearcoat_enabled = true
+clearcoat_roughness = 0.46
+clearcoat_texture = SubResource("GradientTexture2D_ipamc")
+detail_mask = SubResource("ImageTexture_ajynf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jvs2"]
+albedo_color = Color(1, 0.741176, 0.501961, 1)
+albedo_texture = SubResource("MeshTexture_t72l5")
+clearcoat_enabled = true
+clearcoat_roughness = 0.46
+clearcoat_texture = SubResource("GradientTexture2D_ipamc")
+detail_mask = SubResource("ImageTexture_ajynf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb7g0"]
+transparency = 1
+albedo_color = Color(1, 0.741176, 0.501961, 1)
+albedo_texture = SubResource("MeshTexture_t72l5")
+clearcoat_enabled = true
+clearcoat_roughness = 0.46
+clearcoat_texture = SubResource("GradientTexture2D_ipamc")
+detail_mask = SubResource("ImageTexture_ajynf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sgb0"]
+albedo_color = Color(0.529412, 0.682353, 1, 1)
+roughness = 0.39
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hxci"]
+albedo_color = Color(0.529412, 0.682353, 1, 1)
+roughness = 0.39
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5wvg"]
+albedo_color = Color(0.529412, 0.682353, 1, 1)
+roughness = 0.39
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3g8h1"]
+albedo_color = Color(0.529412, 0.682353, 1, 1)
+roughness = 0.39
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xars"]
+albedo_color = Color(1, 0.427451, 0.356863, 1)
+metallic = 1.0
+metallic_specular = 0.99
+roughness = 0.47
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klj4c"]
+albedo_color = Color(1, 0.427451, 0.356863, 1)
+metallic = 1.0
+metallic_specular = 0.99
+roughness = 0.47
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 2.567
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_2jdk5")
+
+[node name="LevelLayout" type="Node3D" parent="."]
+
+[node name="Terrain_Water_Largeobj" parent="LevelLayout" instance=ExtResource("6_i72mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.887478, 0)
+
+[node name="Terrain_Water_Largeobj2" parent="LevelLayout" instance=ExtResource("6_i72mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.887478, -11)
+
+[node name="Terrain_Water_Largeobj3" parent="LevelLayout" instance=ExtResource("6_i72mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.887478, -23)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -22.9045)
+use_collision = true
+size = Vector3(23.5837, 1, 57.2888)
+material = SubResource("StandardMaterial3D_kjlnx")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 9.61122, -22.9045)
+use_collision = true
+size = Vector3(23.5837, 1, 57.2888)
+material = SubResource("StandardMaterial3D_mea10")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -11.9637, 4.48782, -21.5293)
+use_collision = true
+size = Vector3(10, 1, 54.8383)
+material = SubResource("StandardMaterial3D_ow0be")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 11.8396, 4.48782, -21.5293)
+use_collision = true
+size = Vector3(10, 1, 54.8383)
+material = SubResource("StandardMaterial3D_8jvs2")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0563598, 4.48782, 5.41033)
+use_collision = true
+size = Vector3(10, 1, 24.0789)
+material = SubResource("StandardMaterial3D_xb7g0")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38431, 1.61645, -5.05666)
+use_collision = true
+size = Vector3(5.7237, 1, 1)
+material = SubResource("StandardMaterial3D_5sgb0")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72516, 1.61645, -9.6589)
+use_collision = true
+size = Vector3(5.7237, 1, 1)
+material = SubResource("StandardMaterial3D_4hxci")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38431, 0.713687, -1.38842)
+use_collision = true
+size = Vector3(5.7237, 1, 1)
+material = SubResource("StandardMaterial3D_k5wvg")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72516, 0.713687, -5.99066)
+use_collision = true
+size = Vector3(5.7237, 1, 1)
+material = SubResource("StandardMaterial3D_3g8h1")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533775, 1.61645, -16.9679)
+use_collision = true
+size = Vector3(12.6733, 7.04811, 5.90413)
+material = SubResource("StandardMaterial3D_8xars")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533775, 0.515706, -9.2716)
+use_collision = true
+size = Vector3(9.53963, 0.270406, 5.90413)
+material = SubResource("StandardMaterial3D_klj4c")
+script = ExtResource("4_ebrxo")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="LevelLayout" groups=["hittable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.118, 2, 0)
+script = ExtResource("4_ebrxo")
+
+[node name="SpotLights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -22.135)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23719, 22.135)
+light_energy = 3.146
+spot_range = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.61891, 1.23719, 22.135)
+light_energy = 3.146
+spot_range = 30.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.71474, 1.23719, 22.135)
+light_energy = 3.146
+spot_range = 30.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23719, 6.7793)
+spot_range = 30.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.61891, 1.23719, 6.7793)
+spot_range = 30.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.71474, 1.23719, 6.7793)
+spot_range = 30.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.23719, -6.25369)
+spot_range = 30.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.61891, 1.23719, -6.25369)
+spot_range = 30.0
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.71474, 1.23719, -6.25369)
+spot_range = 30.0
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0686073, -19.8674)
+spot_range = 30.0
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.61891, 0.0686073, -19.8674)
+spot_range = 30.0
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="SpotLights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.71474, 0.0686073, -19.8674)
+spot_range = 30.0
+
+[node name="Player" parent="." instance=ExtResource("3_ykggw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.4613, 0)
+air_influence = 4.0

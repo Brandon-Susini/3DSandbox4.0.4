@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dlg08dehrnu5y"
+path="res://.godot/imported/Stairs_Coping_Ramp_Curved_Small.obj-2a24d250909fe6ec31875de1d5b9f0ff.scn"
+
+[deps]
+
+source_file="res://Assets/Modular Temple/Stairs_Coping_Ramp_Curved_Small.obj"
+dest_files=["res://.godot/imported/Stairs_Coping_Ramp_Curved_Small.obj-2a24d250909fe6ec31875de1d5b9f0ff.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1

@@ -1,0 +1,7 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://cv2yfpjlx83vg"]
+
+[ext_resource type="Material" uid="uid://d4f52rhkjol00" path="res://Assets/Materials/Player/base_color.tres" id="1_ajkcd"]
+
+[resource]
+material = ExtResource("1_ajkcd")
+size = Vector3(0.125, 0.052, 0.097)

@@ -1,0 +1,58 @@
+{
+	"categories": [
+		{
+			"uuid": "4e008880-b67d-43b2-8ab5-2dca7ee27085",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "c44a2fcb-43ad-49b5-af9a-a0d537f899f4",
+			"title": "Todo",
+			"tasks": [
+				"f1a0e19a-fdde-4c9d-ba63-627361884f51",
+				"7eaaea1a-68bd-4c14-b41c-db8ba2876e49"
+			]
+		},
+		{
+			"uuid": "d63219ed-5cbf-4bb6-a043-b7082fa38f64",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "be67ada5-a64b-4a6d-99f5-e14141283245",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "f1a0e19a-fdde-4c9d-ba63-627361884f51",
+			"title": "Move Arm Mesh instances into new parent node! ",
+			"description": "",
+			"category": "4e008880-b67d-43b2-8ab5-2dca7ee27085",
+			"steps": []
+		},
+		{
+			"uuid": "7eaaea1a-68bd-4c14-b41c-db8ba2876e49",
+			"title": "Script the rotation of the arms to match the head",
+			"description": "",
+			"category": "4e008880-b67d-43b2-8ab5-2dca7ee27085",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"c44a2fcb-43ad-49b5-af9a-a0d537f899f4"
+			],
+			[
+				"d63219ed-5cbf-4bb6-a043-b7082fa38f64"
+			],
+			[
+				"be67ada5-a64b-4a6d-99f5-e14141283245"
+			]
+		]
+	}
+}
