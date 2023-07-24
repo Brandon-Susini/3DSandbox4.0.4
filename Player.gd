@@ -28,6 +28,9 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var reticle = $Head/ColorRect
+@onready var anim_player = $Character/AnimationPlayer
+var animations = ["library1/run","library1/sprint"]
+
 
 #Ray casting
 const RAY_LENGTH = 1000
@@ -45,7 +48,6 @@ var finished_objects = []
 
 
 func _ready():
-	
 	var screen = get_viewport().get_visible_rect().size
 	reticle.position = Vector2(screen.x/2,screen.y/2)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -55,6 +57,9 @@ func _ready():
 		print(root)
 	draw = Draw3D.new()
 	root.call_deferred("add_child",draw)
+	anim_player.current_animation = "idle"
+	anim_player.play()
+	
 	
 	
 
@@ -74,7 +79,7 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-50), deg_to_rad(60))
-	
+		$Character.rotate_y(-event.relative.x * SENSITIVITY)
 
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
@@ -82,6 +87,8 @@ func _process(delta):
 #	for obj in hit_objects:
 #		obj.material.next_pass.albedo_color.a -= delta
 
+
+var anim_index = 0
 func _physics_process(delta):
 	gravity_and_jump(delta)
 	walk_and_run(delta)
@@ -94,16 +101,33 @@ func _physics_process(delta):
 	var target_fov = base_fov + fov_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	if Input.is_action_just_pressed("left_mouse"):
+		anim_player.current_animation = "leftPunch"
+		anim_player.play()
+	if Input.is_action_just_pressed("right_mouse"):
+		anim_player.current_animation = "rightPunch"
+		anim_player.play()
+	if Input.is_action_pressed("sprint"):
+		anim_player.current_animation = "sprint"
+		anim_player.play()
+	
+#	if Input.is_action_just_pressed("sprint"):
+#		anim_player.current_animation = animations[0]
+#		anim_player.play()
+#	if Input.is_action_just_released("sprint"):
+#		anim_player.current_animation = animations[1]
+#		anim_player.play()
 	move_and_slide()
 	
 	
-
+	
+#=======================================================================
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
 	return pos
-	
+
 
 
 func gravity_and_jump(delta):
@@ -117,7 +141,7 @@ func gravity_and_jump(delta):
 
 
 func walk_and_run(delta):
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed("sprint"):
 		speed = run_speed
 	else:
 		speed = walk_speed

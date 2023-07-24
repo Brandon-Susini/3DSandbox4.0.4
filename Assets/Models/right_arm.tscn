@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://crpxc5v4x58gj"]
+
+[ext_resource type="PackedScene" uid="uid://c4mifdvpbfwdl" path="res://Assets/Models/RightArm.obj" id="1_bfeut"]
+[ext_resource type="ArrayMesh" uid="uid://shdiqgwsw432" path="res://Assets/Meshes/right_arm_mesh.tres" id="2_av6wm"]
+[ext_resource type="ArrayMesh" uid="uid://diqbpud2eg1fh" path="res://Assets/Meshes/right_pads_mesh.tres" id="3_xjl35"]
+[ext_resource type="ArrayMesh" uid="uid://cbq35ipwadmov" path="res://Assets/Meshes/right_fingers_mesh.tres" id="4_kpssk"]
+
+[node name="RightArm" instance=ExtResource("1_bfeut")]
+
+[node name="Arms_Main_Cube001" parent="." index="0"]
+mesh = ExtResource("2_av6wm")
+
+[node name="Circle_Connection_Cube001" parent="." index="1"]
+mesh = ExtResource("3_xjl35")
+
+[node name="Fingers_Cube001" parent="." index="2"]
+mesh = ExtResource("4_kpssk")

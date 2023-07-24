@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4fd7mrknec1"]
+
+[ext_resource type="PackedScene" uid="uid://dr17pr71oiw6x" path="res://Assets/Models/Running.fbx" id="1_gxxg5"]
+
+[node name="Character" instance=ExtResource("1_gxxg5")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+unique_name_in_owner = true

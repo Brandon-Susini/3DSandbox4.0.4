@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://7siqotxvwwwv"]
+
+[ext_resource type="Texture2D" uid="uid://b6b461aao14k3" path="res://Assets/Textures/Big Fist_Metal 01_Metallic.png" id="1_vtiqc"]
+[ext_resource type="Texture2D" uid="uid://b7agwaaierflf" path="res://Assets/Textures/Big Fist_Metal 01_Emissive.png" id="2_86553"]
+[ext_resource type="Texture2D" uid="uid://c3o0xesoy6u56" path="res://Assets/Textures/Big Fist_Metal 01_Height.png" id="3_3ohpx"]
+[ext_resource type="Texture2D" uid="uid://bsbar00n7gkve" path="res://Assets/Textures/Big Fist_Metal 01_Normal.png" id="4_5xtnb"]
+[ext_resource type="Texture2D" uid="uid://bp3obfdcxhqv5" path="res://Assets/Textures/Big Fist_Metal 01_Roughness.png" id="5_jhekd"]
+
+[resource]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_vtiqc")
+metallic = 1.0
+metallic_texture = ExtResource("1_vtiqc")
+roughness_texture = ExtResource("5_jhekd")
+emission_enabled = true
+emission_texture = ExtResource("2_86553")
+normal_enabled = true
+normal_texture = ExtResource("4_5xtnb")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_3ohpx")

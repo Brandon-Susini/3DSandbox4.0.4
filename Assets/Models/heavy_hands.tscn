@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://betd0oms3r8kl"]
+
+[ext_resource type="PackedScene" uid="uid://bxwurc2xjgsyk" path="res://Assets/Models/21.03.13 - Big Fist - Apply.obj" id="1_2joy7"]
+
+[node name="210313 - Big Fist - Apply" instance=ExtResource("1_2joy7")]
